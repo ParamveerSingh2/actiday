@@ -97,6 +97,22 @@ flutter:
       fonts:
         - asset: assets/fonts/Rubik/Rubik-VariableFont_wght.ttf
         - asset: assets/fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf
+        - asset: assets/fonts/Rubik/Rubik-SemiBoldItalic.ttf
+        - asset: assets/fonts/Rubik/Rubik-Regular.ttf
+        - asset: assets/fonts/Rubik/Rubik-SemiBold.ttf
+        - asset: assets/fonts/Rubik/Rubik-Medium.ttf
+        - asset: assets/fonts/Rubik/Rubik-MediumItalic.ttf
+        - asset: assets/fonts/Rubik/Rubik-Italic.ttf
+        - asset: assets/fonts/Rubik/Rubik-Light.ttf
+        - asset: assets/fonts/Rubik/Rubik-LightItalic.ttf
+        - asset: assets/fonts/Rubik/Rubik-BoldItalic.ttf
+        - asset: assets/fonts/Rubik/Rubik-ExtraBold.ttf
+        - asset: assets/fonts/Rubik/Rubik-ExtraBoldItalic.ttf
+        - asset: assets/fonts/Rubik/Rubik-BlackItalic.ttf
+        - asset: assets/fonts/Rubik/Rubik-Bold.ttf
+        - asset: assets/fonts/Rubik/Rubik-Black.ttf
+
+
 
     - family: Poppins
       fonts:

@@ -1,5 +1,6 @@
-import 'package:actiday/desktop.dart';
+import 'package:actiday/ui/home/web/ui/home_screen_app_appbar.dart';
 import 'package:actiday/mobile.dart';
+import 'package:actiday/ui/home/web/ui/home_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
           builder:
               (context, child) =>
               MaterialApp(debugShowCheckedModeBanner: false, home: child),
-          child:  Desktop(),
+          child:  HomeUi(),
       );
       }
       else {

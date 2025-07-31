@@ -6,7 +6,7 @@ class Mobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('data', style: TextStyle(fontFamily: 'Poppins')),
+      body: Text('Mobile View', style: TextStyle(fontFamily: 'Poppins')),
     );
   }
 }
