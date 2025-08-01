@@ -7,20 +7,27 @@ class CommonText extends StatelessWidget {
   final String? fontFamily;
   final double? fontSize;
   final FontWeight? fontWeight;
+  final TextOverflow? textOverflow;
+  final int? maxLines;
+  final bool? softWrap;
+
   final EdgeInsetsGeometry? padding;
-  const CommonText({super.key, required this.title, this.color, this.fontFamily, this.fontSize, this.padding, this.fontWeight});
+  const CommonText({super.key, required this.title, this.color, this.fontFamily, this.fontSize, this.padding, this.fontWeight, this.textOverflow, this.maxLines, this.softWrap});
 
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize:fontSize,
-        fontWeight: fontWeight,
-        fontFamily: fontFamily,
-        color: color,
-
+    return Padding(
+      padding: padding ?? EdgeInsets.zero,
+      child: Text(
+        title,
+        style: TextStyle(
+          overflow:textOverflow,
+          fontSize:fontSize,
+          fontWeight: fontWeight,
+          fontFamily: fontFamily,
+          color: color,
+        ),
       ),
     );
   }
