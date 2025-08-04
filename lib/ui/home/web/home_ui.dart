@@ -1,5 +1,6 @@
 import 'package:actiday/ui/catagories/web/categories.dart';
-import 'package:actiday/ui/home/web/ui/home_screen_app_appbar.dart';
+import 'package:actiday/ui/home/web/home_screen_app_appbar.dart';
+import 'package:actiday/ui/terms_and_conditions/web/terms_and_conditions_ui.dart';
 import 'package:actiday/ui/top_classes/web/top_classes_ui.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
@@ -10,8 +11,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomeUi extends StatelessWidget {
-  const HomeUi({super.key});
+class WebHomeUi extends StatelessWidget {
+  const WebHomeUi({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,7 @@ class HomeUi extends StatelessWidget {
                       children: [
                         SizedBox(
                           width: (MediaQuery.sizeOf(context).width) - 200.w,
+
                           height: 242.h,
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
@@ -91,6 +93,7 @@ class HomeUi extends StatelessWidget {
                 ),
               ),
             ),
+            TermsAndConditionsUi(),
           ],
         ),
       ),

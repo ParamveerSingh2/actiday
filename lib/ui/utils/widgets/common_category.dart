@@ -43,9 +43,13 @@ class CommonCategory extends StatelessWidget {
           ),
           Spacer(),
           SizedBox(
-            height: 400,
-            width: 200,
-            child: Image.asset('assets/images/spa.png'),
+            height: 400.h,
+            width: 200.w,
+            child: Column(
+              children: [
+                Expanded(child: Image.asset('assets/images/spa.png',fit: BoxFit.fitHeight,)),
+              ],
+            ),
           ),
         ],
       ),

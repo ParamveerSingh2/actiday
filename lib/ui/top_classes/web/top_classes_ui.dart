@@ -2,12 +2,18 @@ import 'package:actiday/ui/utils/theme/app_colors.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class TopClassesUi extends StatelessWidget {
+class TopClassesUi extends ConsumerStatefulWidget {
   const TopClassesUi({super.key});
 
+  @override
+  ConsumerState<TopClassesUi> createState() => _TopClassesUiState();
+}
+
+class _TopClassesUiState extends ConsumerState<TopClassesUi> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,23 +40,25 @@ class TopClassesUi extends StatelessWidget {
                     itemCount: 6,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                        height: 138.h,
-                        width: 368.w,
+                        height: 140.h,
+                        width: 370.w,
                         decoration: BoxDecoration(
                           color: AppColors.clrF8F8F8,
                           borderRadius: BorderRadius.circular(
-                            20.0.r,
+                            20.r,
                           ),
                         ),
                         child: Column(
                           children: [
-                            SizedBox(
-                              height: 138.sp,
-                              width: 368.sp,
-                              child: Image.asset(
-                                alignment: Alignment.topCenter,
-                                'assets/images/back_massage.png',
-                                fit: BoxFit.fitWidth,
+                            Expanded(
+                              child: SizedBox(
+                                height: 138.sp,
+                                width: 368.sp,
+                                child: Image.asset(
+                                  alignment: Alignment.topCenter,
+                                  'assets/images/back_massage.png',
+                                  fit: BoxFit.fitWidth,
+                                ),
                               ),
                             ),
                             Padding(
