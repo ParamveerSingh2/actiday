@@ -1,8 +1,9 @@
-import 'package:actiday/ui/home/web/home_screen_app_appbar.dart';
-import 'package:actiday/mobile.dart';
+import 'package:actiday/ui/gym_details/mobile/gym_detail_mobile_ui.dart';
 import 'package:actiday/ui/home/web/home_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'mobile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,10 +20,20 @@ class HomePage extends StatelessWidget {
               (context, child) =>
               MaterialApp(debugShowCheckedModeBanner: false, home: child),
           child:  WebHomeUi(),
+          // child:  SpaAndBeautyUi(),
       );
       }
       else {
-        return Mobile();
+        return ScreenUtilInit(
+          designSize: const Size(375, 809),
+          minTextAdapt: true,
+          splitScreenMode: true,
+          builder:
+              (context, child) =>
+              MaterialApp(debugShowCheckedModeBanner: false, home: child),
+          child: GymDetailMobileUi(),
+          // child: MobileUi(),
+        );
       }
     });
   }

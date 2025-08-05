@@ -2,7 +2,6 @@ import 'package:actiday/ui/utils/theme/app_colors.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/app_bar/app_bar_text.dart';
 import 'package:actiday/ui/utils/widgets/app_bar/trailing_icon.dart';
-import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';

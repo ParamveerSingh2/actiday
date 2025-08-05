@@ -1,12 +1,12 @@
-import 'package:actiday/framework/controller/category/categoriy_controller.dart';
+import 'package:actiday/ui/spa_and_beauty/web/spa_and_beauty_ui.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
-import 'package:actiday/ui/utils/widgets/common_category.dart';
+import 'package:actiday/ui/utils/widgets/common_category_mobile.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Categories extends StatelessWidget {
-  const Categories({super.key});
+class CategoriesMobile extends StatelessWidget {
+  const CategoriesMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Categories extends StatelessWidget {
               CommonText(
                 title: 'Categories',
                 fontFamily: 'Poppins',
-                fontSize: 24.sp,
+                fontSize: 16.sp,
                 color: AppColors.clr131414,
                 fontWeight: FontWeight.w600,
               ),
@@ -30,46 +30,31 @@ class Categories extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(right: 15.w, top: 30.h),
-              child: CommonCategory(
+              child: CommonCategoryMobile(
                 color: Colors.blueAccent,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Rubik',
                 title: 'Fitness',
+                image: 'assets/images/fitness_girl.png',
               ),
             ),
             Padding(
               padding: EdgeInsets.only(right: 15.w, top: 30.h),
-              child: CommonCategory(
+              child: CommonCategoryMobile(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Rubik',
                 title: 'Spa & Beauty',
+                image: 'assets/images/spa.png',
+                ontTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> SpaAndBeautyUi()));
+                },
+
               ),
             ),
           ],
         ),
-        Padding(
-          padding: EdgeInsets.only(top: 30.h),
-          child: Row(
-            children: [
-              CommonText(
-                title: 'Top Classes',
-                fontFamily: 'Poppins',
-                fontSize: 24.sp,
-                color: AppColors.clr131414,
-                fontWeight: FontWeight.w600,
-              ),
-              SizedBox(width: 899.w),
-              CommonText(
-                title: 'See All',
-                fontFamily: 'Poppins',
-                fontSize: 20.sp,
-                color: AppColors.clrB5B5B5,
-                fontWeight: FontWeight.w500,
-              ),
-            ],
-          ),
-        ),
+
       ],
     );
   }

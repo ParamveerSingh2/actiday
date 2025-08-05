@@ -9,7 +9,7 @@ class TermsAndConditionsUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 20.h),
       child: Container(
         height: 167.h,
         width: MediaQuery.sizeOf(context).width,

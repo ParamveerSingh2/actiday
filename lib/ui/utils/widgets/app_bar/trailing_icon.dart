@@ -1,4 +1,3 @@
-import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

@@ -8,50 +8,56 @@ class CommonCategory extends StatelessWidget {
   final String title;
   final FontWeight fontWeight;
   final String fontFamily;
+  final String image;
+  final VoidCallback? ontTap;
 
   const CommonCategory({
     super.key,
     required this.color,
     required this.title,
     required this.fontWeight,
-    required this.fontFamily,
+    required this.fontFamily, required this.image,
+    this.ontTap
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width:( MediaQuery.sizeOf(context).width)/2.38,
-      height:( MediaQuery.sizeOf(context).height)/5,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(20.0.r),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 25.w, top: 35.h),
-            child: CommonText(
-              textOverflow: TextOverflow.fade,
-              title: title,
-              fontSize: 24.sp,
-              fontWeight: fontWeight,
-              fontFamily: fontFamily,
-              color: AppColors.clrWhite,
+    return InkWell(
+      onTap: ontTap,
+      child: Container(
+        width:( MediaQuery.sizeOf(context).width)/2.38,
+        height:( MediaQuery.sizeOf(context).height)/5,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(20.0.r),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 25.w, top: 35.h),
+              child: CommonText(
+                textOverflow: TextOverflow.fade,
+                title: title,
+                fontSize: 24.sp,
+                fontWeight: fontWeight,
+                fontFamily: fontFamily,
+                color: AppColors.clrWhite,
 
+              ),
             ),
-          ),
-          Spacer(),
-          SizedBox(
-            height: 400.h,
-            width: 200.w,
-            child: Column(
-              children: [
-                Expanded(child: Image.asset('assets/images/spa.png',fit: BoxFit.fitHeight,)),
-              ],
+            Spacer(),
+            SizedBox(
+              height: 400.h,
+              width: 200.w,
+              child: Column(
+                children: [
+                  Expanded(child: Image.asset(image,fit: BoxFit.fitHeight,)),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

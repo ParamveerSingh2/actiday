@@ -1,15 +1,12 @@
-import 'package:actiday/ui/catagories/web/categories.dart';
+import 'package:actiday/ui/advertisement_banner/web/advertisement_banner_web_ui.dart';
+import 'package:actiday/ui/catagories/web/categories_web.dart';
 import 'package:actiday/ui/home/web/home_screen_app_appbar.dart';
 import 'package:actiday/ui/terms_and_conditions/web/terms_and_conditions_ui.dart';
 import 'package:actiday/ui/top_classes/web/top_classes_ui.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
-import 'package:actiday/ui/utils/theme/svg_constants.dart';
-import 'package:actiday/ui/utils/widgets/common_category.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class WebHomeUi extends StatelessWidget {
   const WebHomeUi({super.key});
@@ -31,33 +28,8 @@ class WebHomeUi extends StatelessWidget {
                 padding: EdgeInsets.only(left: 100.w, top: 40.h),
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: (MediaQuery.sizeOf(context).width) - 200.w,
+                    AdvertisementBannerWebUi(),
 
-                          height: 242.h,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 3,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Container(
-                                height: 241.h,
-                                width: (MediaQuery.sizeOf(context).width) - 1.w,
-                                decoration: BoxDecoration(
-                                  color: AppColors.clrF8F8F8,
-                                  borderRadius: BorderRadius.circular(20.0.r),
-                                ),
-                                child: Image.asset(
-                                  'assets/images/be_fit.png',
-                                  fit: BoxFit.fitHeight,
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
                     Row(
                       children: [
                         Padding(
@@ -87,8 +59,9 @@ class WebHomeUi extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Categories(),
+                    CategoriesWeb(),
                     TopClassesUi(),
+                    SizedBox(height: 80.h),
                   ],
                 ),
               ),

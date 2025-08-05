@@ -5,7 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final categoryController = ChangeNotifierProvider((ref) => CategoryController());
 
 class CategoryController extends ChangeNotifier {
-List<CategoriesModel> categoryList = [];
+  List<CategoryModel> categoryList = [
+    CategoryModel('Fitness', 'assets/images/fitness_girl.png'),
+    CategoryModel('Spa', 'assets/images/spa.png'),
+  ];
 }
 
 
