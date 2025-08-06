@@ -1,10 +1,7 @@
-import 'dart:ui';
-
 class CategoryModel {
   //categories model class
   final String title;
-  final String image;
-  final Color color;
+  final String svg;
 
-  CategoryModel(this.title, this.image,this.color);
+  CategoryModel(this.title, this.svg);
 }
