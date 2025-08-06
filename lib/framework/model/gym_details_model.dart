@@ -1,4 +1,5 @@
 class GymDetailsModel {
+  //gym details model class
   String coverImage;
   String logo;
   String title;
@@ -15,17 +16,12 @@ class GymDetailsModel {
 }
 
 class OurServices {
+  //our services model class
   String image;
   String title;
   String description;
   String time;
   double credit;
 
-  OurServices(
-    this.image,
-    this.title,
-    this.description,
-    this.time,
-    this.credit,
-  );
+  OurServices(this.image, this.title, this.description, this.time, this.credit);
 }

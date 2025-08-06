@@ -1,8 +1,8 @@
 import 'package:actiday/ui/advertisement_banner/web/advertisement_banner_web_ui.dart';
-import 'package:actiday/ui/catagories/web/categories_web.dart';
+import 'package:actiday/ui/catagories/web/categories_web_ui.dart';
 import 'package:actiday/ui/home/web/home_screen_app_appbar.dart';
 import 'package:actiday/ui/terms_and_conditions/web/terms_and_conditions_ui.dart';
-import 'package:actiday/ui/top_classes/web/top_classes_ui.dart';
+import 'package:actiday/ui/top_classes/web/top_classes_web_ui.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
@@ -59,8 +59,8 @@ class WebHomeUi extends StatelessWidget {
                         ],
                       ),
                     ),
-                    CategoriesWeb(),
-                    TopClassesUi(),
+                    CategoriesWebUi(),
+                    TopClassesWebUi(),
                     SizedBox(height: 80.h),
                   ],
                 ),

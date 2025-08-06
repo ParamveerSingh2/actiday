@@ -25,79 +25,91 @@ class AdvertisementBannerMobileUi extends StatelessWidget {
                   color: AppColors.clrF8F8F8,
                   borderRadius: BorderRadius.circular(20.r),
                 ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 2,
+                  itemBuilder: (BuildContext context,  int index){
+                    return SizedBox(
+                      width: (MediaQuery.of(context).size.width) - 40.w,
+                      child: Row(
                         children: [
-                          CommonText(
-                            padding: EdgeInsets.only(
-                              left: 7.w,
-                              top: 5.h,
-                              right: 7.w,
-                            ),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CommonText(
+                                  padding: EdgeInsets.only(
+                                    left: 7.w,
+                                    top: 5.h,
+                                    right: 7.w,
+                                  ),
 
-                            title: 'Be Fit',
-                            fontFamily: 'Poppins',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          CommonText(
-                            padding: EdgeInsets.only(
-                              left: 7.w,
-                              top: 2.h,
-                              right: 2.w,
-                            ),
+                                  title: 'Be Fit',
+                                  fontFamily: 'Poppins',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                CommonText(
+                                  padding: EdgeInsets.only(
+                                    left: 7.w,
+                                    top: 2.h,
+                                    right: 2.w,
+                                  ),
 
-                            title:
-                                'Relax and rejuvenate\nwith the traditional Thai',
-                            fontFamily: 'Rubik',
-                            fontSize: 9.sp,
-                            color: AppColors.clr576464,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          SizedBox(height: 40.h),
-                          SizedBox(
-                            height: 30.h,
-                            width: 60.w,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.clrBlack,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(18.r),
-                                    bottomLeft: Radius.circular(18.r),
+                                  title:
+                                  'Relax and rejuvenate\nwith the traditional Thai',
+                                  fontFamily: 'Rubik',
+                                  fontSize: 10.sp,
+                                  color: AppColors.clr576464,
+                                  fontWeight: FontWeight.w400,
+                                  
+                                ),
+                                SizedBox(height: 40.h),
+                                SizedBox( // arrow button inside of advertisement button on the bottom left
+                                  height: 30.h,
+                                  width: 60.w,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: AppColors.clrBlack,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(18.r),
+                                          bottomLeft: Radius.circular(18.r),
+                                        ),
+                                      ),
+
+                                      elevation: 0,
+                                    ),
+                                    onPressed: () {},
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        SvgPicture.asset(
+                                          SvgConstants.svgRightArrowIcon,
+                                          height: 12.sp,
+                                          width: 15.sp,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-
-                                elevation: 0,
-                              ),
-                              onPressed: () {},
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  SvgPicture.asset(
-                                    SvgConstants.svgRightArrowIcon,
-                                    height: 12.sp,
-                                    width: 15.sp,
-                                  ),
-                                ],
-                              ),
+                              ],
+                            ),
+                          ),
+                          SizedBox( // main image
+                            child: Image.asset(
+                              'assets/images/girl_lift.png',
+                              height: 142.h,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      child: Image.asset(
-                        'assets/images/girl_lift.png',
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ],
+                    );
+                  },
+
                 ),
               ),
             ],

@@ -2,11 +2,13 @@ import 'package:actiday/framework/model/gym_details_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+//our service section controller
 final ourServicesController = ChangeNotifierProvider(
   (ref) => OurServicesController(),
 );
 
 class OurServicesController extends ChangeNotifier {
+  // image , title , description, and time
   List<OurServices> ourServicesList = [
     OurServices(
       'assets/images/meditation.png',

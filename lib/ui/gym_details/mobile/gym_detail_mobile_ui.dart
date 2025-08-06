@@ -4,6 +4,7 @@ import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,19 +17,45 @@ class GymDetailMobileUi extends ConsumerStatefulWidget {
 }
 
 class _GymDetailMobileUiState extends ConsumerState<GymDetailMobileUi> {
+
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+  }
+  @override
+  void dispose(){
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    super.dispose();
+  }
+  // gym details mobile
   @override
   Widget build(BuildContext context) {
     final ourServicesWatch = ref.watch(ourServicesController);
     return Scaffold(
       backgroundColor: AppColors.clrFAFAFA,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: AppColors.clrWhite,
         title: Padding(
           padding: EdgeInsets.only(left: 10.sp, right: 10.sp, top: 10.sp),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.arrow_back_ios_rounded, size: 24.sp),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: Icon(Icons.arrow_back_ios_rounded, size: 24.sp),
+              ),
               CommonText(
                 title: 'Gym Details',
                 fontFamily: 'Poppins',
@@ -36,10 +63,21 @@ class _GymDetailMobileUiState extends ConsumerState<GymDetailMobileUi> {
                 color: AppColors.clrBlack,
                 fontWeight: FontWeight.w500,
               ),
-              Icon(
-                CupertinoIcons.heart_circle,
-                color: Colors.pinkAccent,
-                size: 24.sp,
+              Container(
+                height: 26.h,
+                width: 26.w,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: AppColors.clrBlack, width: 1.2),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 2.5.h),
+                  child: Icon(
+                    CupertinoIcons.heart_fill,
+                    color: Colors.pinkAccent,
+                    size: 16.sp,
+                  ),
+                ),
               ),
             ],
           ),
@@ -60,7 +98,53 @@ class _GymDetailMobileUiState extends ConsumerState<GymDetailMobileUi> {
                       fit: BoxFit.fitWidth,
                     ),
                     Positioned(
-                      bottom:-41.h,
+                      right: 30.w,
+                      bottom: 20.h,
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 23.sp,
+                            width: 64.sp,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  AppColors.clrFEC34D,
+                                  AppColors.clrF88C83,
+                                  AppColors.clrF048C6,
+                                ],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+
+                              borderRadius: BorderRadius.circular(15.r),
+                            ),
+                          ),
+                          Positioned(
+                            top: 3.2.sp,
+                            right: 11.7.sp,
+
+                            child: Row(
+                              children: [
+                                Icon(
+                                  CupertinoIcons.star,
+                                  size: 15,
+                                  color: AppColors.clrWhite,
+                                ),
+                                SizedBox(width: 5.w),
+                                CommonText(
+                                  title: '4.5',
+                                  color: AppColors.clrWhite,
+                                  fontSize: 13.sp,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Positioned(
+                      bottom: -41.h,
                       left: 20.w,
                       child: Container(
                         width: 90.w,
@@ -69,16 +153,39 @@ class _GymDetailMobileUiState extends ConsumerState<GymDetailMobileUi> {
                         decoration: BoxDecoration(
                           color: AppColors.clrWhite,
                           shape: BoxShape.circle,
-                          boxShadow: [BoxShadow(
-                            color: AppColors.clrBlack.withOpacity(.2),
-                            blurRadius: 8,
-                            offset: Offset(0, 4),
-                          )]
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.clrBlack.withOpacity(.2),
+                              blurRadius: 8,
+                              offset: Offset(0, 4),
+                            ),
+                          ],
                         ),
                         child: SvgPicture.asset(
                           SvgConstants.svgLadyFitLogo,
 
                           fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: -65.h,
+                      right: 8.w,
+                      child: SizedBox(
+                        width: 90.w,
+                        height: 90.h,
+                        child: Container(
+                          child: Row(
+                            children: [
+                              Icon(CupertinoIcons.info, size: 28.sp),
+                              SizedBox(width: 4.w),
+                              CommonText(
+                                title: 'Info',
+                                color: AppColors.clrB5B5B5,
+                                fontSize: 14.sp,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

@@ -1,20 +1,38 @@
 import 'package:actiday/ui/home/web/home_screen_app_appbar.dart';
 import 'package:actiday/ui/terms_and_conditions/web/terms_and_conditions_ui.dart';
-import 'package:actiday/ui/top_classes/web/top_classes_ui.dart';
+import 'package:actiday/ui/top_classes/web/top_classes_web_ui.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SpaAndBeautyUi extends ConsumerStatefulWidget {
-  const SpaAndBeautyUi({super.key});
+class SpaAndBeautyWebUi extends ConsumerStatefulWidget {
+  const SpaAndBeautyWebUi({super.key});
 
   @override
-  ConsumerState<SpaAndBeautyUi> createState() => _SpaAndBeautyUiState();
+  ConsumerState<SpaAndBeautyWebUi> createState() => _SpaAndBeautyUiState();
 }
 
-class _SpaAndBeautyUiState extends ConsumerState<SpaAndBeautyUi> {
+class _SpaAndBeautyUiState extends ConsumerState<SpaAndBeautyWebUi> {
+  @override
+ void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
+  @override
+  void dispose(){
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -176,7 +194,7 @@ class _SpaAndBeautyUiState extends ConsumerState<SpaAndBeautyUi> {
                   ),
                 ],
               ),
-              TopClassesUi(),
+              TopClassesWebUi(),
               TermsAndConditionsUi(),
 
             ],

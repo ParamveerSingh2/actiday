@@ -8,14 +8,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class TopClassesMobileUi extends ConsumerStatefulWidget {
-  const TopClassesMobileUi({super.key});
+class TopClassesWebUi extends ConsumerStatefulWidget {
+  const TopClassesWebUi({super.key});
 
   @override
-  ConsumerState<TopClassesMobileUi> createState() => _TopClassesUiState();
+  ConsumerState<TopClassesWebUi> createState() => _TopClassesUiState();
 }
 
-class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
+class _TopClassesUiState extends ConsumerState<TopClassesWebUi> {
   @override
   Widget build(BuildContext context) {
     final topClassWatch = ref.watch(topClassController);
@@ -28,16 +28,15 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
               CommonText(
                 title: 'Top Classes',
                 fontFamily: 'Poppins',
-                fontSize: 14.sp,
+                fontSize: 24.sp,
                 color: AppColors.clr131414,
                 fontWeight: FontWeight.w600,
               ),
-              Spacer(),
+              SizedBox(width: 899.w),
               CommonText(
-                padding: EdgeInsets.only(right: 20.w),
                 title: 'See All',
                 fontFamily: 'Poppins',
-                fontSize: 14.sp,
+                fontSize: 20.sp,
                 color: AppColors.clrB5B5B5,
                 fontWeight: FontWeight.w500,
               ),
@@ -49,24 +48,26 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
           child: Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 16.h, bottom: 40.h),
+                padding: EdgeInsets.only(top: 34.h, bottom: 80.h),
                 child: SizedBox(
                   // height: (MediaQuery.sizeOf(context).height) - 60.h,
-                  width: (MediaQuery.sizeOf(context).width) - 40.w,
+                  width: (MediaQuery
+                      .sizeOf(context)
+                      .width) - 200.w,
                   child: GridView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1,
+                      crossAxisCount: 3,
                       crossAxisSpacing: 30,
                       mainAxisSpacing: 30.0,
-                      childAspectRatio: 1.5,
+                      childAspectRatio: 1.7,
                     ),
                     itemCount: topClassWatch.topClassesList.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                        height: 70.h,
-                        width: 185.w,
+                        height: 140.h,
+                        width: 370.w,
                         decoration: BoxDecoration(
                           color: AppColors.clrF8F8F8,
                           borderRadius: BorderRadius.circular(20.r),
@@ -77,8 +78,8 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
                               child: Stack(
                                 children: [
                                   SizedBox(
-                                    height: MediaQuery.sizeOf(context).height,
-                                    width:  MediaQuery.sizeOf(context).width,
+                                    height: 138.sp,
+                                    width: 368.sp,
                                     child: Image.asset(
                                       alignment: Alignment.topCenter,
                                       topClassWatch.topClassesList[index].image,
@@ -86,35 +87,45 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
                                     ),
                                   ),
                                   Positioned(
-                                    right: 8.8.sp,
+                                    right: 7.8.sp,
                                     top: 14.5.sp,
-                                    child: ClipRRect(
-                                      clipBehavior: Clip.antiAlias,
-                                      borderRadius: BorderRadius.circular(50.r),
-                                      child: Container(
-                                        color: AppColors.clrWhite,
-                                        height: 20.sp,
-                                        width: 20.sp,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        topClassWatch.toggleLike(index);
+                                      },
+                                      child: ClipRRect(
+                                        clipBehavior: Clip.antiAlias,
+                                        borderRadius: BorderRadius.circular(
+                                          50.r,
+                                        ),
+                                        child: Container(
+                                          color: AppColors.clrWhite,
+                                          height: 20.sp,
+                                          width: 20.sp,
+                                        ),
                                       ),
                                     ),
                                   ),
                                   Positioned(
-                                    right: 10.sp,
-                                    top: 17.sp,
-                                    child:
-                                        topClassWatch
-                                                .topClassesList[index]
-                                                .isLiked
+                                    // like unlike button
+                                      right: 10.sp,
+                                      top: 17.sp,
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          topClassWatch.toggleLike(index);
+                                        },
+                                        child: topClassWatch
+                                            .topClassesList[index].isLiked
                                             ? Icon(
-                                              CupertinoIcons.heart_fill,
-                                              size: 14.sp,
-                                              color: Colors.pinkAccent,
-                                            )
-                                            : Icon(
-                                              CupertinoIcons.heart_fill,
-                                              size: 14.sp,
-                                              color: AppColors.clrB5B5B5,
-                                            ),
+                                          CupertinoIcons.heart_fill,
+                                          size: 16.sp,
+                                          color: Colors.pinkAccent,
+                                        ) : Icon(
+                                          CupertinoIcons.heart_fill,
+                                          size: 16.sp,
+                                          color: AppColors.clrB5B5B5,
+                                        ),
+                                      )
                                   ),
                                 ],
                               ),
@@ -132,11 +143,11 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
                                     children: [
                                       CommonText(
                                         title:
-                                            topClassWatch
-                                                .topClassesList[index]
-                                                .title,
+                                        topClassWatch
+                                            .topClassesList[index]
+                                            .title,
                                         fontWeight: FontWeight.w600,
-                                        fontSize: 14.sp,
+                                        fontSize: 18.sp,
                                         color: AppColors.clr131414,
                                         fontFamily: 'Poppins',
                                       ),
@@ -144,7 +155,7 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
                                       CommonText(
                                         title: '4.5',
                                         fontFamily: 'Rubik',
-                                        fontSize: 12.sp,
+                                        fontSize: 14.sp,
                                         fontWeight: FontWeight.w500,
                                       ),
                                       SizedBox(width: 2.w),
@@ -158,13 +169,12 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
                                   Row(
                                     children: [
                                       CommonText(
-                                        padding: EdgeInsets.only(top: 2.h),
                                         title:
-                                            topClassWatch
-                                                .topClassesList[index]
-                                                .subTitle,
+                                        topClassWatch
+                                            .topClassesList[index]
+                                            .subTitle,
                                         fontWeight: FontWeight.w500,
-                                        fontSize: 12.sp,
+                                        fontSize: 16.sp,
                                         color: AppColors.clr131414,
                                         fontFamily: 'Poppins',
                                       ),
@@ -173,13 +183,12 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
                                   Row(
                                     children: [
                                       CommonText(
-                                        padding: EdgeInsets.only(top: 3.h),
                                         title:
-                                            topClassWatch
-                                                .topClassesList[index]
-                                                .location,
+                                        topClassWatch
+                                            .topClassesList[index]
+                                            .location,
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 12.sp,
+                                        fontSize: 14.sp,
                                         color: AppColors.clrB5B5B5,
                                         fontFamily: 'Rubik',
                                       ),

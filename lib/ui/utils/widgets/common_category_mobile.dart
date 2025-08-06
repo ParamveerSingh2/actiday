@@ -47,18 +47,22 @@ class CommonCategoryMobile extends StatelessWidget {
                     fontWeight: fontWeight,
                     fontFamily: fontFamily,
                     color: AppColors.clrWhite,
-
                   ),
                 ),
 
                 Positioned(
-                  child: SizedBox(
-                    height: 180.h,
-                    width: 80.w,
-                    child: Column(
-                      children: [
-                        Expanded(child: Image.asset(image, fit: BoxFit.fitWidth)),
-                      ],
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 40.h),
+                    child: SizedBox(
+                      height: (MediaQuery.of(context).size.height) - 90.h,
+                      width: 150.w,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: Image.asset(image, fit: BoxFit.fitHeight),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

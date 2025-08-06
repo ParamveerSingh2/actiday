@@ -4,9 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final topClassController = ChangeNotifierProvider(
         (ref) => TopClassController()
+  //top classes controller
 ,);
 
 class TopClassController extends ChangeNotifier {
+  // title , subtitle , location, image
   List<TopClassesModel> topClassesList = [
     TopClassesModel(
       'Weight Lift',
@@ -51,6 +53,11 @@ class TopClassController extends ChangeNotifier {
         false
     ),
   ];
+  // like and unlike toggle button
+  void toggleLike(int index){
+    topClassesList[index].isLiked = !topClassesList[index].isLiked;
+    notifyListeners();
+  }
 }
 
 

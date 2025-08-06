@@ -10,94 +10,110 @@ class AdvertisementBannerWebUi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //advertisement banner for web home screen
     return Row(
       children: [
         Container(
-          width: ((MediaQuery.sizeOf(context).width) - 200.w),
+          height: 310.h,
+          width: ((MediaQuery
+              .sizeOf(context)
+              .width) - 200.w),
           decoration: BoxDecoration(
             color: AppColors.clrF8F8F8,
             borderRadius: BorderRadius.circular(20.r),
           ),
-          child: Row(
-            children: [
-              Expanded(
-                flex: 2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 3,
+            itemBuilder: (BuildContext context, int index) {
+
+              return SizedBox(
+                width:( MediaQuery.of(context).size.width)-200.w,
+                child: Row(
                   children: [
-                    CommonText(
-                      padding: EdgeInsets.only(
-                        left: 30.w,
-                        top: 20.h,
-                        right: 10.w,
-                      ),
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CommonText(
+                            padding: EdgeInsets.only(
+                              left: 30.w,
+                              top: 20.h,
+                              right: 10.w,
+                            ),
 
-                      title: 'Be Fit',
-                      fontFamily: 'Poppins',
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    CommonText(
-                      padding: EdgeInsets.only(
-                        left: 30.w,
-                        top: 30.h,
-                        right: 10.w,
-                      ),
+                            title: 'Be Fit',
+                            fontFamily: 'Poppins',
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          CommonText(
+                            padding: EdgeInsets.only(
+                              left: 30.w,
+                              top: 30.h,
+                              right: 10.w,
+                            ),
 
-                      title:
-                      'Experts define physical fitness as "one\'s ability\nto execute daily activities with optimal"',
-                      fontFamily: 'Poppins',
-                      fontSize: 14.sp,
-                      color: AppColors.clr576464,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    SizedBox(height: 20.h),
-                    SizedBox(
-                      height: 60.h,
-                      width: 130.w,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.clrBlack,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(18.r),
-                              bottomLeft: Radius.circular(18.r),
+                            title:
+                            'Experts define physical fitness as "one\'s ability\nto execute daily activities with optimal"',
+                            fontFamily: 'Poppins',
+                            fontSize: 14.sp,
+                            color: AppColors.clr576464,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          SizedBox(height: 20.h),
+                          SizedBox(
+                            height: 60.h,
+                            width: 130.w,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.clrBlack,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(18.r),
+                                    bottomLeft: Radius.circular(18.r),
+                                  ),
+                                ),
+
+                                elevation: 0,
+                              ),
+                              onPressed: () {},
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SvgPicture.asset(
+                                    SvgConstants.svgRightArrowIcon,
+                                    height: 22.sp,
+                                    width: 22.sp,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        right: 30.w,
+                        top: 10.h,
+                      ),
+                      child: SizedBox(
 
-                          elevation: 0,
-                        ),
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SvgPicture.asset(
-                              SvgConstants.svgRightArrowIcon,
-                              height: 22.sp,
-                              width: 22.sp,
-                            ),
-                          ],
+                        child: Image.asset(
+                          'assets/images/girl_lift.png',
+                          fit: BoxFit.fitHeight,
                         ),
                       ),
                     ),
                   ],
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  right: 30.w,
-                  top: 10.h,
-                ),
-                child: SizedBox(
-                  height: 260.h,
-                  child: Image.asset(
-                    'assets/images/girl_lift.png',
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-            ],
+              );
+
+            },
+
           ),
         ),
       ],

@@ -10,6 +10,7 @@ class HomeScreenAppBarMobile extends StatelessWidget {
 
   @override
     Widget build(BuildContext context) {
+    // app bar for mobile home screen
       return Column(
         children: [
           Row(
