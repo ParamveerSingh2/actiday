@@ -1,7 +1,5 @@
-import 'package:actiday/framework/utils/extension/string_extension.dart';
 import 'package:actiday/ui/gym_details/mobile/gym_detail_mobile_ui.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
-import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/widgets/common_category_mobile.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +18,7 @@ class CategoriesMobileUi extends StatelessWidget {
           child: Row(
             children: [
               CommonText(
-                title: LocaleKeys.keyCategories.localized,
+                title: 'Categories',
                 fontFamily: 'Poppins',
                 fontSize: 16.sp,
                 color: AppColors.clr131414,
@@ -37,7 +35,7 @@ class CategoriesMobileUi extends StatelessWidget {
                 color: Colors.blueAccent,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Rubik',
-                title: LocaleKeys.keyFitness.localized,
+                title: 'Fitness',
                 image: 'assets/images/fitness_girl.png',
                 ontTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> GymDetailMobileUi()));
@@ -50,7 +48,7 @@ class CategoriesMobileUi extends StatelessWidget {
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Rubik',
-                title: LocaleKeys.keySpaBeauty.localized,
+                title: 'Spa & Beauty',
                 image: 'assets/images/spa.png',
               ),
             ),

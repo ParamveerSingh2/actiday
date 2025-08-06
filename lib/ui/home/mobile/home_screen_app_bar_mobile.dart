@@ -1,11 +1,10 @@
 import 'package:actiday/ui/utils/theme/app_colors.dart';
-import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:actiday/framework/utils/extension/string_extension.dart';
+
 class HomeScreenAppBarMobile extends StatelessWidget {
   const HomeScreenAppBarMobile({super.key});
 
@@ -29,7 +28,7 @@ class HomeScreenAppBarMobile extends StatelessWidget {
                 color: AppColors.clr131414,
               ),
               SizedBox(width: 3,),
-              CommonText(title: LocaleKeys.keyAbuDhabiUAE.localized,fontWeight: FontWeight.w500,fontFamily: 'Rubik',fontSize: 12.sp,color: AppColors.clr010101,),
+              CommonText(title: 'Abu Dhabi, UAE',fontWeight: FontWeight.w500,fontFamily: 'Rubik',fontSize: 12.sp,color: AppColors.clr010101,),
               Spacer(),
               SvgPicture.asset(
                 SvgConstants.svgNotificationIcon,
@@ -42,8 +41,3 @@ class HomeScreenAppBarMobile extends StatelessWidget {
       );
     }
   }
-
-
-
-
-

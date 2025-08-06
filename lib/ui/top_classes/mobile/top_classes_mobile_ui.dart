@@ -1,7 +1,5 @@
 import 'package:actiday/framework/controller/top_classes_controller.dart';
-import 'package:actiday/framework/utils/extension/string_extension.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
-import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,7 +26,7 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
           child: Row(
             children: [
               CommonText(
-                title: LocaleKeys.keySeeAll.localized,
+                title: 'Top Classes',
                 fontFamily: 'Poppins',
                 fontSize: 14.sp,
                 color: AppColors.clr131414,
@@ -37,7 +35,7 @@ class _TopClassesUiState extends ConsumerState<TopClassesMobileUi> {
               Spacer(),
               CommonText(
                 padding: EdgeInsets.only(right: 20.w),
-                title: LocaleKeys.keyTopClasses.localized,
+                title: 'See All',
                 fontFamily: 'Poppins',
                 fontSize: 14.sp,
                 color: AppColors.clrB5B5B5,

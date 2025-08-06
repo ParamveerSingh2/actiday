@@ -1,6 +1,4 @@
-import 'package:actiday/framework/utils/extension/string_extension.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
-import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +45,7 @@ class AdvertisementBannerMobileUi extends StatelessWidget {
                                     top: 5.h,
                                     right: 2.w,
                                   ),
-                                  title: LocaleKeys.keyBeFit.localized,
+                                  title: 'Be Fit',
                                   fontFamily: 'Poppins',
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
@@ -60,7 +58,7 @@ class AdvertisementBannerMobileUi extends StatelessWidget {
                                   ),
 
                                   title:
-                                      LocaleKeys.keyRelaxAndRejuvenateWithTheTraditionalThai.localized,
+                                      'Relax and rejuvenate\nwith the traditional Thai',
                                   fontFamily: 'Rubik',
                                   fontSize: 10.sp,
                                   color: AppColors.clr576464,
@@ -113,14 +111,14 @@ class AdvertisementBannerMobileUi extends StatelessWidget {
         ),
         CommonText(
           padding: EdgeInsets.only(top: 20.h),
-          title: LocaleKeys.keyActiveLifestyle.localized,
+          title: 'Active Lifestyle',
           fontFamily: 'Rubik',
           fontSize: 16.sp,
           color: AppColors.clr131414,
         ),
         CommonText(
           padding: EdgeInsets.only(top: 7.h),
-          title: LocaleKeys.keyGetActiveEveryDayTryNewThingsFindNewClasses.localized,
+          title: 'Get active every day Try new things\nfind new clases',
           fontFamily: 'Rubik',
           fontSize: 12.sp,
           color: AppColors.clr131414,

@@ -1,9 +1,7 @@
-import 'package:actiday/framework/utils/extension/string_extension.dart';
 import 'package:actiday/ui/advertisement_banner/mobile/advertisement_banner_mobile_ui.dart';
 import 'package:actiday/ui/catagories/mobile/categories_mobile_ui.dart';
 import 'package:actiday/ui/top_classes/mobile/top_classes_mobile_ui.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
-import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +40,7 @@ class MobileHomeUi extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   CommonText(
-                    title: LocaleKeys.keyHome.localized,
+                    title: 'Home',
                     fontSize: 12.sp,
                     color: AppColors.clr131414,
                     fontFamily: 'Rubik',
@@ -59,7 +57,7 @@ class MobileHomeUi extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   CommonText(
-                    title: LocaleKeys.keyBookings.localized,
+                    title: 'Bookings',
                     fontSize: 12.sp,
                     color: AppColors.clrB5B5B5,
                     fontFamily: 'Rubik',
@@ -76,7 +74,7 @@ class MobileHomeUi extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   CommonText(
-                    title: LocaleKeys.keyExplore.localized,
+                    title: 'Explore',
                     fontSize: 12.sp,
                     color: AppColors.clrB5B5B5,
                     fontFamily: 'Rubik',
@@ -93,7 +91,7 @@ class MobileHomeUi extends StatelessWidget {
                   ),
                   SizedBox(height: 4.h),
                   CommonText(
-                    title: LocaleKeys.keyFavorite.localized,
+                    title: 'Favorite',
                     fontSize: 12.sp,
                     color: AppColors.clrB5B5B5,
                     fontFamily: 'Rubik',
@@ -127,14 +125,13 @@ class MobileHomeUi extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15.r),
                       ),
                       child: TextFormField(
-                        textDirection: TextDirection.rtl,
                         style: TextStyle(color: Colors.black, fontSize: 12.sp),
                         decoration: InputDecoration(
                           focusedBorder: const OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white, width: 0),
                           ),
                           prefixIcon: Icon(CupertinoIcons.search, size: 14.sp),
-                          hintText:LocaleKeys.keyYogaPilatesMassage.localized,
+                          hintText:'yoga, pilates, massage' ,
                           enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white, width: 0),
                           ),
@@ -145,7 +142,12 @@ class MobileHomeUi extends StatelessWidget {
                             borderSide: BorderSide(color: Colors.white, width: 0),
                           ),
                         ),
-
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Enter Title';
+                          }
+                          return null;
+                        },
                       ),
                     ),
                   ],
