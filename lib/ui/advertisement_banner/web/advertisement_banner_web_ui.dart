@@ -22,7 +22,8 @@ class AdvertisementBannerWebUi extends StatelessWidget {
             color: AppColors.clrF8F8F8,
             borderRadius: BorderRadius.circular(20.r),
           ),
-          child: ListView.builder(
+          child:
+          ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: 3,
             itemBuilder: (BuildContext context, int index) {
@@ -41,7 +42,7 @@ class AdvertisementBannerWebUi extends StatelessWidget {
                             padding: EdgeInsets.only(
                               left: 30.w,
                               top: 20.h,
-                              right: 10.w,
+                              right: 4.w,
                             ),
 
                             title: 'Be Fit',
@@ -53,7 +54,7 @@ class AdvertisementBannerWebUi extends StatelessWidget {
                             padding: EdgeInsets.only(
                               left: 30.w,
                               top: 30.h,
-                              right: 10.w,
+                              right: 4.w,
                             ),
 
                             title:
@@ -63,7 +64,7 @@ class AdvertisementBannerWebUi extends StatelessWidget {
                             color: AppColors.clr576464,
                             fontWeight: FontWeight.w400,
                           ),
-                          SizedBox(height: 20.h),
+                          Spacer(),
                           SizedBox(
                             height: 60.h,
                             width: 130.w,
@@ -80,15 +81,10 @@ class AdvertisementBannerWebUi extends StatelessWidget {
                                 elevation: 0,
                               ),
                               onPressed: () {},
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  SvgPicture.asset(
-                                    SvgConstants.svgRightArrowIcon,
-                                    height: 22.sp,
-                                    width: 22.sp,
-                                  ),
-                                ],
+                              child: SvgPicture.asset(
+                                SvgConstants.svgRightArrowIcon,
+                                height: 22.sp,
+                                width: 22.sp,
                               ),
                             ),
                           ),

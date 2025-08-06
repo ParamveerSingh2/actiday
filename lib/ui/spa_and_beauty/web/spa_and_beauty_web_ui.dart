@@ -37,6 +37,7 @@ class _SpaAndBeautyUiState extends ConsumerState<SpaAndBeautyWebUi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: AppColors.clrF0F5F9,
         toolbarHeight: 100.w,
         title: HomeScreenAppBar(),
@@ -136,28 +137,28 @@ class _SpaAndBeautyUiState extends ConsumerState<SpaAndBeautyWebUi> {
                             children: [
                               Expanded(child: Column(
                                 children: [
-                                  Image.asset('assets/images/massage.png',height: 65.sp,width: 100.sp,),
+                                  Image.asset('assets/images/massage.png',height: 55.sp,width: 90.sp,),
                                   CommonText(title: 'Massage',fontSize: 12.sp,fontFamily: 'Rubik',fontWeight: FontWeight.w400,color: AppColors.clr131414,)
 
                                 ],
                               )),
                               Expanded(child: Column(
                                 children: [
-                                  Image.asset('assets/images/moroccan_bath.png',height: 65.sp,width: 100.sp,),
+                                  Image.asset('assets/images/moroccan_bath.png',height: 55.sp,width: 90.sp,),
                                   CommonText(title: 'Moroccan Bath',fontSize: 12.sp,fontFamily: 'Rubik',fontWeight: FontWeight.w400,color: AppColors.clr131414,)
 
                                 ],
                               )),
                               Expanded(child: Column(
                                 children: [
-                                  Image.asset('assets/images/manicure.png',height: 65.sp,width: 100.sp,),
+                                  Image.asset('assets/images/manicure.png',height: 55.sp,width: 90.sp,),
                                   CommonText(title: 'Manicure',fontSize: 12.sp,fontFamily: 'Rubik',fontWeight: FontWeight.w400,color: AppColors.clr131414,)
 
                                 ],
                               )),
                               Expanded(child: Column(
                                 children: [
-                                  Image.asset('assets/images/hair_dryer.png',height: 65.sp,width: 100.sp,),
+                                  Image.asset('assets/images/hair_dryer.png',height: 55.sp,width: 90.sp,),
                                   CommonText(title: 'Hair Blow Dry',fontSize: 12.sp,fontFamily: 'Rubik',fontWeight: FontWeight.w400,color: AppColors.clr131414,)
 
                                 ],

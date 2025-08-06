@@ -28,7 +28,7 @@ class AdvertisementBannerMobileUi extends StatelessWidget {
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 2,
-                  itemBuilder: (BuildContext context,  int index){
+                  itemBuilder: (BuildContext context, int index) {
                     return SizedBox(
                       width: (MediaQuery.of(context).size.width) - 40.w,
                       child: Row(
@@ -43,9 +43,8 @@ class AdvertisementBannerMobileUi extends StatelessWidget {
                                   padding: EdgeInsets.only(
                                     left: 7.w,
                                     top: 5.h,
-                                    right: 7.w,
+                                    right: 2.w,
                                   ),
-
                                   title: 'Be Fit',
                                   fontFamily: 'Poppins',
                                   fontSize: 14.sp,
@@ -59,15 +58,15 @@ class AdvertisementBannerMobileUi extends StatelessWidget {
                                   ),
 
                                   title:
-                                  'Relax and rejuvenate\nwith the traditional Thai',
+                                      'Relax and rejuvenate\nwith the traditional Thai',
                                   fontFamily: 'Rubik',
                                   fontSize: 10.sp,
                                   color: AppColors.clr576464,
                                   fontWeight: FontWeight.w400,
-                                  
                                 ),
-                                SizedBox(height: 40.h),
-                                SizedBox( // arrow button inside of advertisement button on the bottom left
+                                Spacer(),
+                                SizedBox(
+                                  // arrow button inside of advertisement button on the bottom left
                                   height: 30.h,
                                   width: 60.w,
                                   child: ElevatedButton(
@@ -83,22 +82,18 @@ class AdvertisementBannerMobileUi extends StatelessWidget {
                                       elevation: 0,
                                     ),
                                     onPressed: () {},
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        SvgPicture.asset(
-                                          SvgConstants.svgRightArrowIcon,
-                                          height: 12.sp,
-                                          width: 15.sp,
-                                        ),
-                                      ],
+                                    child: SvgPicture.asset(
+                                      SvgConstants.svgRightArrowIcon,
+                                      height: 12.sp,
+                                      width: 15.sp,
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          SizedBox( // main image
+                          SizedBox(
+                            // main image
                             child: Image.asset(
                               'assets/images/girl_lift.png',
                               height: 142.h,
@@ -109,7 +104,6 @@ class AdvertisementBannerMobileUi extends StatelessWidget {
                       ),
                     );
                   },
-
                 ),
               ),
             ],
