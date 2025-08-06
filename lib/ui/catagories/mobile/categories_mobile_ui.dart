@@ -50,7 +50,7 @@ class _CategoriesMobileUiState extends ConsumerState<CategoriesMobileUi> {
                       fontWeight: FontWeight.w500,
                       fontFamily: 'Rubik',
                       title: categoryWatch.categoryList[index].title,
-                      image: 'assets/images/fitness_girl.png',
+                      image: categoryWatch.categoryList[index].image,
                       ontTap: () {
                         Navigator.push(
                           context,
