@@ -3,6 +3,7 @@ import 'package:actiday/ui/utils/theme/app_colors.dart';
 import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,84 +16,33 @@ class HomeScreenAppBarMobile extends StatefulWidget {
 }
 
 class _HomeScreenAppBarMobileState extends State<HomeScreenAppBarMobile> {
-  String? dropdownvalue = 'English';
+  String? dropDownValue = 'English';
+  var items = ['عربي', 'English'];
 
-  Locale dropDownValue = Locale('en');
-  List<Locale> language = [Locale('en'), Locale('ar')];
-
-
-  var items = [
-    'Arabic',
-    'English',
-  ];
   @override
   Widget build(BuildContext context) {
-
     // app bar for mobile home screen
     return Column(
       children: [
         Row(
           children: [
-            // DropdownButton<Locale>(
-            //   value: dropDownValue,
-            //   icon: SvgPicture.asset(
-            //     SvgConstants.svgCategoryIcon,
-            //     height: 24.h,
-            //     width: 24.w,
-            //   ),
-              // onChanged: (Locale? language) {
-              //   if (language != null) {
-              //     language = language;
-              //   }
-              // },
-              // onChanged: (Locale? language) {
-              //   if(language != null){
-              //     dropDownValue = language;
-              //   }
-              //   setState(() {
-              //     dropDownValue = language!;
-              //   });
-              // },
-              // items:
-              //     language.map((Locale locale) {
-              //       return DropdownMenuItem<Locale>(
-              //         value: dropDownValue,
-              //         child: Text(
-              //           locale.languageCode == 'en' ? 'English' : 'Arabic',
-              //         ),
-              //       );
-              //     }).toList(),
-              // items:
-              //     language.map((Locale locale) {
-              //       return DropdownMenuItem<Locale>(
-              //         value: dropDownValue,
-              //         child: Text(
-              //           locale.languageCode == 'en' ? 'English' : 'Arabic',
-              //         ),
-              //       );
-              //     }).toList(),
-            // ),
             DropdownButton(
-              value: dropdownvalue,
+              value: dropDownValue,
               icon: const Icon(Icons.keyboard_arrow_down),
 
               items:
-              items.map((String items) {
-                return DropdownMenuItem(value: items, child: Text(items));
-              }).toList(),
-              // onChanged: (Locale? language) {
-              //   if(language != null){
-              //     dropDownValue = language;
-              //   }
-              //   setState(() {
-              //     dropDownValue = language!;
-              //   });
-              // },
+                  items.map((String items) {
+                    return DropdownMenuItem(value: items, child: Text(items));
+                  }).toList(),
               onChanged: (newValue) {
-                  dropdownvalue = newValue;
-                  setState(() {
-
-                  });
+                dropDownValue = newValue;
+                setState(() {
+                  if (dropDownValue.toString() == 'عربي') {
+                    context.setLocale(Locale('ar'));
+                  } else {
+                    context.setLocale(Locale('en'));
+                  }
+                });
               },
             ),
             Spacer(),
