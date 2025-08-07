@@ -1,5 +1,7 @@
 import 'package:actiday/framework/controller/gym_details/gym_details_controller.dart';
+import 'package:actiday/framework/utils/extension/string_extension.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
+import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -57,7 +59,7 @@ class _GymDetailMobileUiState extends ConsumerState<GymDetailMobileUi> {
                 child: Icon(Icons.arrow_back_ios_rounded, size: 24.sp),
               ),
               CommonText(
-                title: 'Gym Details',
+                title: LocaleKeys.keyGymDetails.localized,
                 fontFamily: 'Poppins',
                 fontSize: 16.sp,
                 color: AppColors.clrBlack,
@@ -180,7 +182,7 @@ class _GymDetailMobileUiState extends ConsumerState<GymDetailMobileUi> {
                               Icon(CupertinoIcons.info, size: 28.sp),
                               SizedBox(width: 4.w),
                               CommonText(
-                                title: 'Info',
+                                title: LocaleKeys.keyInfo.localized,
                                 color: AppColors.clrB5B5B5,
                                 fontSize: 14.sp,
                               ),
@@ -196,7 +198,7 @@ class _GymDetailMobileUiState extends ConsumerState<GymDetailMobileUi> {
           ),
           CommonText(
             padding: EdgeInsets.only(left: 20.w, top: 55.h),
-            title: 'Lady Fit',
+            title: LocaleKeys.keyLadyFit.localized,
             color: AppColors.clrBlack,
             fontWeight: FontWeight.w500,
             fontSize: 16.sp,
@@ -229,7 +231,7 @@ class _GymDetailMobileUiState extends ConsumerState<GymDetailMobileUi> {
           ),
           CommonText(
             padding: EdgeInsets.only(left: 20.w, top: 30.h),
-            title: 'Our Services',
+            title: LocaleKeys.keyOurServices.localized,
             color: AppColors.clr131414,
             fontWeight: FontWeight.w500,
             fontSize: 14.sp,
@@ -374,7 +376,7 @@ class _GymDetailMobileUiState extends ConsumerState<GymDetailMobileUi> {
                                           right: 11.5.sp,
 
                                           child: CommonText(
-                                            title: 'Book Now',
+                                            title: LocaleKeys.keyBookNow.localized,
                                             color: AppColors.clrWhite,
                                             fontSize: 12.sp,
                                           ),

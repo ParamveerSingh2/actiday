@@ -13,7 +13,7 @@ void main() async {
         path: 'lang',
         startLocale: Locale('en'),
         fallbackLocale: Locale('en'),
-        useOnlyLangCode: true,
+       // useOnlyLangCode: true,
         child: const MyApp(),
       ),
     ),

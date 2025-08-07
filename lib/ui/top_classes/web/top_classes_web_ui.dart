@@ -1,4 +1,4 @@
-import 'package:actiday/framework/controller/top_classes_controller.dart';
+import 'package:actiday/framework/controller/top_classes/top_classes_controller.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';

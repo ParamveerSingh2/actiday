@@ -1,3 +1,4 @@
+import 'package:actiday/framework/controller/lang_controller.dart';
 import 'package:actiday/framework/utils/extension/string_extension.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
 import 'package:actiday/ui/utils/theme/app_strings.g.dart';
@@ -5,22 +6,24 @@ import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomeScreenAppBarMobile extends StatefulWidget {
+class HomeScreenAppBarMobile extends ConsumerStatefulWidget {
   const HomeScreenAppBarMobile({super.key});
 
   @override
-  State<HomeScreenAppBarMobile> createState() => _HomeScreenAppBarMobileState();
+  ConsumerState<HomeScreenAppBarMobile> createState() => _HomeScreenAppBarMobileState();
 }
 
-class _HomeScreenAppBarMobileState extends State<HomeScreenAppBarMobile> {
+class _HomeScreenAppBarMobileState extends ConsumerState<HomeScreenAppBarMobile> {
   String? dropDownValue = 'English';
-  var items = ['عربي', 'English'];
+  var items = ['Arabic', 'English'];
 
   @override
   Widget build(BuildContext context) {
+    final languageWatch = ref.watch(languageController);
     // app bar for mobile home screen
     return Column(
       children: [
@@ -36,13 +39,15 @@ class _HomeScreenAppBarMobileState extends State<HomeScreenAppBarMobile> {
                   }).toList(),
               onChanged: (newValue) {
                 dropDownValue = newValue;
-                setState(() {
-                  if (dropDownValue.toString() == 'عربي') {
-                    context.setLocale(Locale('ar'));
-                  } else {
-                    context.setLocale(Locale('en'));
-                  }
-                });
+                languageWatch.languageToggle(dropDownValue, context);
+
+                // setState(() {
+                //   if (dropDownValue.toString() == 'عربي') {
+                //     context.setLocale(Locale('ar'));
+                //   } else {
+                //     context.setLocale(Locale('en'));
+                //   }
+                // });
               },
             ),
             Spacer(),
