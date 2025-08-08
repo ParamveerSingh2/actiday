@@ -1,6 +1,8 @@
 import 'package:actiday/framework/controller/category/categoriy_controller.dart';
+import 'package:actiday/framework/utils/extension/string_extension.dart';
 import 'package:actiday/ui/gym_details/mobile/gym_detail_mobile_ui.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
+import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/widgets/common_category_mobile.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +28,7 @@ class _CategoriesMobileUiState extends ConsumerState<CategoriesMobileUi> {
           child: Row(
             children: [
               CommonText(
-                title: 'Categories',
+                title: LocaleKeys.keyCategories.localized,
                 fontFamily: 'Poppins',
                 fontSize: 16.sp,
                 color: AppColors.clr131414,

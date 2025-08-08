@@ -1,3 +1,4 @@
+import 'package:actiday/framework/controller/lang_controller.dart';
 import 'package:actiday/framework/utils/extension/string_extension.dart';
 import 'package:actiday/ui/advertisement_banner/mobile/advertisement_banner_mobile_ui.dart';
 import 'package:actiday/ui/catagories/mobile/categories_mobile_ui.dart';
@@ -7,18 +8,19 @@ import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'home_screen_app_bar_mobile.dart';
 import '../../utils/theme/svg_constants.dart';
 
-class MobileHomeUi extends StatelessWidget {
+class MobileHomeUi extends ConsumerWidget {
   const MobileHomeUi({super.key});
 
   @override
-  Widget build(BuildContext context) {
-
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(languageController);
     return Scaffold(
       backgroundColor: AppColors.clrWhite,
       appBar: AppBar(
@@ -108,7 +110,7 @@ class MobileHomeUi extends StatelessWidget {
         padding: EdgeInsets.only(left: 20.w),
         child: GestureDetector(
           behavior: HitTestBehavior.translucent,
-          onTap: (){
+          onTap: () {
             FocusScope.of(context).unfocus();
           },
           child: SingleChildScrollView(
@@ -130,18 +132,30 @@ class MobileHomeUi extends StatelessWidget {
                         style: TextStyle(color: Colors.black, fontSize: 12.sp),
                         decoration: InputDecoration(
                           focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white, width: 0),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
                           ),
                           prefixIcon: Icon(CupertinoIcons.search, size: 14.sp),
-                          hintText:LocaleKeys.keyYogaPilatesMassage.localized ,
+                          hintText: LocaleKeys.keyYogaPilatesMassage.localized,
                           enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white, width: 0),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
                           ),
                           errorBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white, width: 0),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
                           ),
                           focusedErrorBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white, width: 0),
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                              width: 0,
+                            ),
                           ),
                         ),
                       ),

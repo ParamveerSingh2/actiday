@@ -4,7 +4,6 @@ import 'package:actiday/ui/utils/theme/app_colors.dart';
 import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/theme/svg_constants.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +18,7 @@ class HomeScreenAppBarMobile extends ConsumerStatefulWidget {
 
 class _HomeScreenAppBarMobileState extends ConsumerState<HomeScreenAppBarMobile> {
   String? dropDownValue = 'English';
-  var items = ['Arabic', 'English'];
+  var items = ['English', 'Arabic','French'];
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +39,6 @@ class _HomeScreenAppBarMobileState extends ConsumerState<HomeScreenAppBarMobile>
               onChanged: (newValue) {
                 dropDownValue = newValue;
                 languageWatch.languageToggle(dropDownValue, context);
-
-                // setState(() {
-                //   if (dropDownValue.toString() == 'عربي') {
-                //     context.setLocale(Locale('ar'));
-                //   } else {
-                //     context.setLocale(Locale('en'));
-                //   }
-                // });
               },
             ),
             Spacer(),

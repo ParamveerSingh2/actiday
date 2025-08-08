@@ -20,6 +20,7 @@ class CommonText extends StatelessWidget {
       padding: padding ?? EdgeInsets.zero,
       child: Text(
         title,
+
         style: TextStyle(
           overflow:textOverflow,
           fontSize:fontSize,

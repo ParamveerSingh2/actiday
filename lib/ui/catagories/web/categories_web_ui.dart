@@ -1,5 +1,7 @@
+import 'package:actiday/framework/utils/extension/string_extension.dart';
 import 'package:actiday/ui/spa_and_beauty/web/spa_and_beauty_web_ui.dart';
 import 'package:actiday/ui/utils/theme/app_colors.dart';
+import 'package:actiday/ui/utils/theme/app_strings.g.dart';
 import 'package:actiday/ui/utils/widgets/common_category.dart';
 import 'package:actiday/ui/utils/widgets/common_text.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ class CategoriesWebUi extends StatelessWidget {
           child: Row(
             children: [
               CommonText(
-                title: 'Categories',
+                title: LocaleKeys.keyCategories.localized,
                 fontFamily: 'Poppins',
                 fontSize: 24.sp,
                 color: AppColors.clr131414,
